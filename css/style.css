@@ -48,6 +48,10 @@ img {
     max-width: 100%;
 }
 
+strong { 
+    font-weight: var(--fw-bold) 
+}
+
 
 /* Typography */
 
