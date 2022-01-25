@@ -4,25 +4,34 @@
     box-sizing: border-box;
 }
 
-/* Custom Properties, variables to be used as the theme requires */
+/* Custom Properties */
 
 :root {
+    /* Font to be used variables*/
     --ff-primary: 'Source Sans Pro', sans-serif;
     --ff-secondary: 'Source Code Pro', monospace;
-    
+
+    /* font width to be used variables*/
     --fw-reg: 300;
     --fw-bold: 900;
     
+    /* Theme Color variables*/
     --clr-light: #fff;
     --clr-dark: #303030;
     --clr-accent: #16e0bd;
     
+    /* font relative size variables*/
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
+    
+    /* image block shadow composition variable */
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25), /* block shadow 1*/
+          0.125em 0.125em 0.25em rgba(0,0,0,.15); /* block shadow 2*/
 }
 
+/* Media query for screen size - responsive design */
 @media (min-width: 800px) {
     :root {
         --fs-h1: 4.5rem;
@@ -43,22 +52,23 @@ body {
     line-height: 1.6;
 }
 
+section {
+    padding: 5em 2em;
+}
+
 img {
     display: block;
     max-width: 100%;
 }
 
-strong { 
-    font-weight: var(--fw-bold) 
-}
-
+strong { font-weight: var(--fw-bold) }
 
 /* Typography */
 
 h1,
 h2,
 h3 {
-    line-height: 1.1;
+    line-height: 1;
     margin: 0;
 }
 
@@ -66,8 +76,6 @@ h1 { font-size: var(--fs-h1) }
 h2 { font-size: var(--fs-h2) }
 h3 { font-size: var(--fs-h3) }
 
-
-/* Titles and SubTitles */
 
 .section__title {
     margin-bottom: .25em;
@@ -89,5 +97,58 @@ h3 { font-size: var(--fs-h3) }
 .section__subtitle--intro,
 .section__subtitle--about {
     background: var(--clr-accent);
+    padding: .25em 1em;
     font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+
+/* header */
+
+nav { 
+    display: none;
+ }
+
+/*  Intro section  */
+
+.intro {
+    position: relative;
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+.section__subtitle--intro {
+    display: inline-block; /* set block to its size on smaller screens */
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+    
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }    
+    
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
 }
