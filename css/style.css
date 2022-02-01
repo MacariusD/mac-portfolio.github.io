@@ -63,6 +63,31 @@ img {
 
 strong { font-weight: var(--fw-bold) }
 
+:focus {/*Focused state visual for links and other stuff*/
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+/* Button */
+
+.btn {
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out; /*animation of button*/
+}
+
+.btn:hover {
+    transform: scale(1.1); /*animation on hover*/
+}
+
 /* Typography */
 
 h1,
@@ -150,5 +175,49 @@ nav {
         position: relative;
         left: -1.5em;
         width: calc(100% + 1.5em);
+    }
+}
+
+/* My Services-What I do */
+
+.my-services {
+    background-color: var(--clr-dark);
+    /* background-image: url(../img/) *//*get and set own background image*/
+    background-size: cover;
+    /* background-blend-mode: multiply; */ /* to darkern or integrate background layer*/
+    color: var(--clr-light);  
+    text-align: center;   
+}
+
+.section__title--services {
+    color: var(--clr-accent);
+    position: relative;
+}
+
+.section__title--services::after {/*sudo element*/
+    content: '';
+    display: block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);/* "currentColor" matches color from parent section*/
+    opacity: 0.25;
+}
+
+.service {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+    .services {
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service + .service { /* if there is a sibling then add a margin left*/
+        margin-left: 2em;
     }
 }
