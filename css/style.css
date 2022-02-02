@@ -187,6 +187,44 @@ header {
     color: var(--clr-accent)
 }
 
+.nav-toggle {
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.hamburger {/*complex way of creating nav hamburger for more posibilities*/
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background: var(--clr-accent);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content:'';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before {top: 6px;}
+.hamburger::after {bottom: 6px;}
+
+
 /*  Intro section  */
 
 .intro {
@@ -231,6 +269,7 @@ header {
     }
 }
 
+
 /* My Services-What I do */
 
 .my-services {
@@ -274,6 +313,7 @@ header {
         margin-left: 2em;
     }
 }
+
 
 /* About Me */
 
@@ -320,6 +360,7 @@ header {
     }
 }
 
+
 /* My Work */
 
 .my-work {
@@ -355,6 +396,7 @@ header {
     transform: scale(1.2);
     opacity: .75;
 }
+
 
 /* Footer */
 
