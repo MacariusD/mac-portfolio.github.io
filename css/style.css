@@ -222,7 +222,7 @@ header {
 }
 
 .nav-open .hamburger::before {
-    transform: rotate(90deg) translateX(-6px); /* convert hamberger to x and align x lines properly*/
+    transform: rotate(90deg) translateX(-6px); /* convert hamburger to x and align x lines properly*/
 }
 
 .nav-open .hamburger::after{
