@@ -43,6 +43,10 @@
 
 /* General styles */
 
+html {
+    scroll-behavior: smooth; /*smooth scrolls to website section after selection in nav*/ 
+}
+
 body {
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -184,7 +188,7 @@ header {
 }
 
 .nav__link:hover {
-    color: var(--clr-accent)
+    color: var(--clr-accent);
 }
 
 .nav-toggle {
@@ -196,6 +200,33 @@ header {
     right: 1em;
     top: 1em;
     z-index: 1000;
+}
+
+/*
+.nav-open {
+    background: red; used to check if javascript is working with a simple action
+    
+}
+*/
+
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px); /* convert hamberger to x and align x lines properly*/
+}
+
+.nav-open .hamburger::after{
+    opacity: 0;
 }
 
 .hamburger {/*complex way of creating nav hamburger for more posibilities*/
@@ -223,7 +254,6 @@ header {
 
 .hamburger::before {top: 6px;}
 .hamburger::after {bottom: 6px;}
-
 
 /*  Intro section  */
 
