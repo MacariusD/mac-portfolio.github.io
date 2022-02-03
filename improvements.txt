@@ -1,0 +1,7 @@
+portfolio photos
+
+yellow:#ffde59
+blue: 0078d7
+grey: a6a6a6
+
+best color scheme
