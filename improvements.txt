@@ -5,3 +5,6 @@ blue: 0078d7
 grey: a6a6a6
 
 best color scheme
+
+ - day night button
+ - arrow floating button to go back to the top
